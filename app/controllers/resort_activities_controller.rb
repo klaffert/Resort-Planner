@@ -1,0 +1,2 @@
+class ResortActivitiesController < ApplicationController
+end

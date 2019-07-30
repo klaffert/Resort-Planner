@@ -1,0 +1,2 @@
+module ResortActivitiesHelper
+end
