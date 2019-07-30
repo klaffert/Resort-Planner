@@ -16,3 +16,31 @@
     </div>
   <% end %>
 </div>
+    
+
+<%= form_tag("/resorts", method: "get") do %>
+  <%= label_tag(:id, "Search by city:") %>
+  <%= text_field_tag(:id) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<div class="ui items">
+  <% @resorts_by_city.each do |resort| %>
+    <div class="item">
+      <div class="image">
+          <%= image_tag "#{resort.id}.png" %>
+      </div>
+      <div class="content">
+        <a class="header"><%= link_to resort.name, resort_path(resort) %></a>
+        <div class="description">
+          <p><%= resort.city %></p>
+          <p><%= resort.price_range%></p>
+          <div class="ui blue label"><%= resort.rating %></div>
+        </div>
+
+      </div>  
+    </div>
+  <% end %>
+</div>
+
+

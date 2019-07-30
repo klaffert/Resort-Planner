@@ -4,6 +4,10 @@ class ReservationsController < ApplicationController
         @reservation.resort = Resort.find(params["resort_id"])
     end
 
+    def index
+        @reservations = Reservation.all
+    end
+
     def create
         @reservation = Reservation.create(reservation_params)
         redirect_to @reservation
@@ -16,7 +20,7 @@ class ReservationsController < ApplicationController
     private
 
     def reservation_params
-        params.require(:reservation).permit(:length, :party_size)
+        params.require(:reservation).permit(:length, :party_size, :user_id, :resort_id)
     end
    
 end

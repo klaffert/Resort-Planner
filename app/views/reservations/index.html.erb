@@ -1,0 +1,20 @@
+
+<ul>
+<div class="ui list">
+ <% @reservations.each do |reservation| %>
+    <div class="item">
+      <div class="header">User name</div>
+      <li> <%=reservation.user.name %>
+    </div>
+    <div class="item">  
+      <div class="header">Stay length</div>
+      <%=reservation.length %>
+    </div>
+    <div class="item">
+      <div class="header">Party size</div>
+      <%=reservation.party_size %></li>
+    </div>
+   <% end %>
+</div>
+</ul>
+

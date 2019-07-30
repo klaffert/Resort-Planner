@@ -1,0 +1,15 @@
+<ul>
+<%= form_for @resort do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :city %>
+<%= f.text_field :city %><br>
+<%= f.label :price_range %>
+<%= f.text_field :price_range %><br>
+<%= f.label :images %>
+<%= f.text_field :images %><br>
+<%= f.label :rating %>
+<%= f.number_field :rating %><br>
+<%= f.submit %>
+<% end %>
+</ul>
