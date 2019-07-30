@@ -1,7 +1,21 @@
-<h1> Activities </h1>
+<div class="ui items">
+  <% @activities.each do |activity| %>
+    <div class="item">
+      <div class="image">
+          <%= image_tag "#{activity.id}.jpg" %>
+      </div>
+      <div class="content">
+        <a class="header"><%= link_to activity.name, activity_path(activity) %></a>
+        <div class="description">
+          <div class="ui blue label"><%= activity.rating %></div>
+        </div>
 
-<% @activities.each do |activity| %>
-<label> <%= activity.name %></label>
-<br><%= link_to 'More Information', activity %><br>
-<br>
-<% end %>
+      </div>  
+    </div>
+  <% end %>
+</div>
+
+<%# TO DO: %>
+
+<%# Sort Activities by Ratings %>
+<%# Add "Activities" Header in correct formatting%>

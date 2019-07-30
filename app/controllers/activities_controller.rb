@@ -10,6 +10,7 @@ class ActivitiesController < ApplicationController
 
     def create
         @activity = Activity.create(activity_params)
+        redirect_to activities_path
     end
 
     def show

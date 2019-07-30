@@ -1,12 +1,8 @@
-<h1><%= @activity.name %></h1>
-
-<%= form_tag(@activity) do %>
-<label> Price: $<%=@activity.price %>.00/per person</label><br>
-<br><label> Duration: <%=@activity.length %> hour(s)</label><br>
-<br><label> Rating: <%=@activity.rating %>/5.0</label><br>
-<br><%= submit_tag "Book Activity"%>
-<% end %>
+<br><label>Activity Name: <%= @activity.name %></label><br>
+<br><label>Duration: <%= @activity.length %> hour(s)</label><br>
+<br><label>Price: $<%= @activity.price %>/per person</label><br>
+<br><label>Rating: <%= @activity.rating %>/5.0 stars</label><br>
+<br><%= link_to :Book, new_resort_activity_path(:activity_id => @activity.id) %>
 
 
-
- 
+<%# TO DO: %>

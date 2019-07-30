@@ -7,12 +7,10 @@ class ResortActivitiesController < ApplicationController
 
     def new
         @resort_activity = ResortActivity.new
-        # @resort_activity = ResortActivity.find(params["resort_activity_id"])
     end
 
     def create
         @resort_activity = ResortActivity.create(resort_activity_params)
-        
     end
 
     def show 
