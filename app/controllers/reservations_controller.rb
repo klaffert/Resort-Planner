@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
     def new
         @reservation = Reservation.new
+        @reservation.resort = Resort.find(params["resort_id"])
     end
 
     def create
