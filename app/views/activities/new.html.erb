@@ -1,1 +1,12 @@
-<h1>Create a new Activity for <%=@activity.name%></h1>
+<h2><%=@activity.name%>
+<%= form_for @activity do |f|%>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+<%= f.label :duration %>
+<%= f.number_field :length %><br>
+<%= f.label :price %>
+<%= f.number_field :price %><br>
+<%= f.label :rating %>
+<%= f.number_field :rating %><br>
+<%= f.submit %>
+<% end %>

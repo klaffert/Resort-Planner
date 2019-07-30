@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 5.times do
     User.create(
       name: Faker::Name.name,
@@ -41,3 +42,9 @@ Activity.create(name: "Wine Tasting" , length: '3' , price: '90' , rating: '3.8'
 Activity.create(name: "Brewery Tour" , length: '2' , price: '60' , rating: '2.3')
 Activity.create(name: "Horseback Riding" , length: '3' , price: '135' , rating: '4.8')
 
+10.times do
+  ResortActivity.create(
+    activity_id: Faker::Number.between(1,9),
+    resort_id: Faker::Number.between(1,20)
+  )
+end

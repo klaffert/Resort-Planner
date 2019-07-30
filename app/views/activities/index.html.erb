@@ -1,9 +1,7 @@
 <h1> Activities </h1>
+
 <% @activities.each do |activity| %>
-<label> Activity Name: <%= activity.name %></label><br>
-<br><label> Length of Activity: <%= activity.length %> hour(s)</label><br>
-<br><label> Price of Activity: $<%= activity.price %>/per person</label><br>
-<br><label> Activity Rating: <%= activity.rating %>/5 stars</label><br>
+<label> <%= activity.name %></label>
 <br><%= link_to 'More Information', activity %><br>
 <br>
 <% end %>

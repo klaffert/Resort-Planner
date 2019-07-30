@@ -1,5 +1,12 @@
 <h1><%= @activity.name %></h1>
 
 <%= form_tag(@activity) do %>
-<%= submit_tag "Book Activity"%>
+<label> Price: $<%=@activity.price %>.00/per person</label><br>
+<br><label> Duration: <%=@activity.length %> hour(s)</label><br>
+<br><label> Rating: <%=@activity.rating %>/5.0</label><br>
+<br><%= submit_tag "Book Activity"%>
 <% end %>
+
+
+
+ 
