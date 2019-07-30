@@ -1,0 +1,8 @@
+<h2><%=@reservation.resort.name%>
+<%= form_for @reservation do |f|%>
+<%= f.label :length %>
+<%= f.number_field :length %><br>
+<%= f.label :party_size %>
+<%= f.number_field :party_size %><br>
+<%= f.submit %>
+<% end %>

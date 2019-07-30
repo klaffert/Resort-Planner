@@ -11,6 +11,10 @@ class ResortsController < ApplicationController
         @resort = Resort.create(resort_params)
     end
 
+    def show
+        @resort= Resort.find(params[:id])
+    end
+
     private
 
     def resort_params
