@@ -32,3 +32,12 @@
     )
   end
   
+Activity.create(name: "Spa Day" , length: '6' , price: '200' , rating: '4.3')
+Activity.create(name: "Scuba Diving" , length: '4' , price: '150' , rating: '5.0')
+Activity.create(name: "Zumba Class" , length: '1' , price: '25' , rating: '3.4')
+Activity.create(name: "Salsa Dancing" , length: '1' , price: '40' , rating: '3.2')
+Activity.create(name: "Cooking Class" , length: '3' , price: '105' , rating: '4.0')
+Activity.create(name: "Wine Tasting" , length: '3' , price: '90' , rating: '3.8')
+Activity.create(name: "Brewery Tour" , length: '2' , price: '60' , rating: '2.3')
+Activity.create(name: "Horseback Riding" , length: '3' , price: '135' , rating: '4.8')
+
