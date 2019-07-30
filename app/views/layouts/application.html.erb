@@ -6,10 +6,37 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui secondary  menu">
+      <div class="ui container">
+        <a class="active item">
+          Resorts
+        </a>
+        <a class="item">
+          Activities
+        </a>
+        <a class="item">
+          Reservations
+        </a>
+        <div class="right menu">
+          <div class="item">
+            <div class="ui icon input">
+              <input type="text" placeholder="Search...">
+              <i class="search link icon"></i>
+            </div>
+          </div>
+          <a class="ui item">
+            Logout
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="ui main text container">
+      <%= yield %>
+    </div>
   </body>
 </html>
