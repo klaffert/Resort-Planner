@@ -3,7 +3,7 @@
   <% @activities.each do |activity| %>
     <div class="item">
       <div class="image">
-          <%= image_tag "#{activity.id}.jpg" %>
+          <%=image_tag "#{activity.id}.jpg" %>
       </div>
       <div class="content">
         <a class="header"><%= link_to activity.name, activity_path(activity) %></a>

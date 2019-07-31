@@ -1,4 +1,11 @@
-<h2><%=@resort_activity.activity_id%>
+<h2>You selected 
+<%=@resort_activity.activity.name%>
+at
+<%=@resort_activity.resort.name%> 
+for 
+<%=@resort_activity.user.reservations.length%> people.
+Is this correct?</h2>
+
 <%= form_for @resort_activity do |f|%>
 
 <%= f.submit "Book Activity" %>

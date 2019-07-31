@@ -8,6 +8,8 @@ class ResortActivitiesController < ApplicationController
     def new
         @resort_activity = ResortActivity.new
         @resort_activity.activity = Activity.find(params["activity_id"])
+        @resort_activity.resort = Resort.find_by(params["resort_id"])
+        @resort_activity.user = User.find_by(params["user_id"])
     end
 
     def create
@@ -22,7 +24,7 @@ class ResortActivitiesController < ApplicationController
     private
 
     def resort_activity_params
-        params.require(:resort_activity).permit(:activity_id, :resort_id, :user_id)
+        params.require(:resort_activity).permit(:resort_id, :user_id, :activity_id)
     end
 
 end
