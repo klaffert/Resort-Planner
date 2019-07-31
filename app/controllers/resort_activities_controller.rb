@@ -11,6 +11,7 @@ class ResortActivitiesController < ApplicationController
 
     def create
         @resort_activity = ResortActivity.create(resort_activity_params)
+        redirect_to @resort_activity
     end
 
     def show 
