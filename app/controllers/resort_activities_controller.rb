@@ -21,7 +21,7 @@ class ResortActivitiesController < ApplicationController
     private
 
     def resort_activity_params
-        params.require(:resort_activity).permit(:activity_id, :resort_id)
+        params.require(:resort_activity).permit(:activity_id, :resort_id, :user_id)
     end
 
 end
