@@ -4,16 +4,16 @@
   <%=@user.name %>
  <% @reservations.each do |reservation| %>
     <div class="item">
-      <div class="header">Resort name</div>
-      <li> <%=reservation.resort.name %>
+      <div class="header">Resort name:</div>
+      <li> <%=link_to reservation.resort.name, reservation_path(reservation) %>
     </div>
     <div class="item">  
-      <div class="header">Stay length</div>
-      <%=reservation.length %>
+      <div class="header">Stay length:</div>
+      <%=reservation.length%> days
     </div>
     <div class="item">
-      <div class="header">Party size</div>
-      <%=reservation.party_size %></li>
+      <div class="header">Party size:</div>
+      <%=reservation.party_size %></li> people <br>
     </div>
    <% end %>
 </div>
