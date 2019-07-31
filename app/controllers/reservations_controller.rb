@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
 
     def new
         @reservation = Reservation.new
-        @reservation.resort = Resort.find(params["resort_id"])
+        
     end
 
     def index
@@ -27,6 +27,12 @@ class ReservationsController < ApplicationController
 
     def show 
         @reservation= Reservation.find(params[:id])
+    end
+
+    def destroy
+        @reservation = Reservation.find(params[:id])
+        @reservation.delete
+        redirect_to resorts_path
     end
 
     private

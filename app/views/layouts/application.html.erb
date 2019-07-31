@@ -19,7 +19,7 @@
     
         <div class="right menu">
         <% if logged_in? %>
-        <div class="ui item"><%= current_user_name%></div>
+        <div class="ui item"><%= link_to current_user_name, edit_user_path(current_user_id)%></div>
         <%= link_to :Logout, logout_path, class: "ui item" %>
         <% else %>
         <%= link_to :Login, login_path, class: "ui item" %>
