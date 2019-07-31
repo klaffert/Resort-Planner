@@ -1,8 +1,16 @@
 <h2><%=@reservation.resort.name%>
 <%= form_for @reservation do |f|%>
+<<<<<<< HEAD
 <%= f.label :length %>
 <%= f.number_field :length %><br>
 <%= f.label :party_size %>
 <%= f.number_field :party_size %><br>
+=======
+<%= f.label :stay_length %>
+<%= f.text_field :length %><br>
+<%= f.label :party_size %>
+<%= f.number_field :party_size %><br>
+<%= f.hidden_field :resort_id, value:@reservation.resort.id %>
+>>>>>>> 9c84d2d1e94fdff3ce4a59f874471e6eacd3625a
 <%= f.submit %>
 <% end %>

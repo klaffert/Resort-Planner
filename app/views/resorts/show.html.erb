@@ -1,6 +1,27 @@
-<%= @resort.name %>
-<%= @resort.city %>
-<%= @resort.price_range %>
-<%= @resort.images %>
-<%= @resort.rating %>
-<%= link_to :Book, new_reservation_path(:resort_id => @resort.id) %>
+
+    
+    <div class="item">
+       
+       <div class="content">
+        
+        <h1 class="ui header">
+          <a class="header"><%= @resort.name %></a>
+          <div class="ui green label"><i class="star icon"></i><%= @resort.rating %></div>
+        </h1>
+        <button class="ui primary button">
+          Book
+         <%= link_to :Book, new_reservation_path(:resort_id => @resort.id)%>
+        </button>
+          <p><i class="map marker icon"></i><%= @resort.city %></p>
+          <p><i class="dollar sign icon"></i><%= @resort.price_range%></p>
+        </div>
+        
+          
+        <br>
+        
+         <div><%= image_tag "#{@resort.id}.png" %></div>
+        
+
+      </div>  
+    </div>
+  
