@@ -56,10 +56,14 @@ Activity.create(name: "Horseback Riding" , length: '3' , price: '135' , rating: 
 
 Reservation.create(length: 5, party_size: 2, user_id: 1, resort_id: 1)
 Reservation.create(length: 3, party_size: 2, user_id: 1, resort_id: 2)
+User.create(name: "Grace", budget: "low", password_digest:"123")
+User.create(name: "Eric", budget: "medium", password_digest:"123")
+User.create(name: "Tong", budget: "high", password_digest:"123")
 
 10.times do
   ResortActivity.create(
     activity_id: Faker::Number.between(1,9),
-    resort_id: Faker::Number.between(1,11)
+    resort_id: Faker::Number.between(1,11),
+    user_id: Faker::Number.between(1,5)
   )
 end
