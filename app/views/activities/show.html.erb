@@ -5,9 +5,9 @@
           <a class="header"><%= @activity.name %></a>
           <div class="ui green label"><i class="star icon"></i><%= @activity.rating %></div>
         </h1>
-        <button class="ui primary basic button">
+            <button class="ui primary basic button">
          <%= link_to :Book, new_resort_activity_path(:activity_id => @activity.id)%>
-        </button>
+            </button>
         <p></p>
           <p><i class="clock icon"></i><%= @activity.length %> hour(s)</p>
           <p><i class="dollar sign icon"></i><%= @activity.price%>/per person</p>
@@ -15,12 +15,8 @@
         <%= form_for @activity do |f| %>
           <i class="building icon"></i><%= f.collection_select :resorts, Resort.all, :name, :name %>
         <% end %>
-
-        </div>
+        
         <br>
-         <div><%= image_tag "#{@activity.id}.jpg" %></div>
+        <div><%= image_tag "#{@activity.id}.jpg" %></div>
     </div>  
 </div>
-
-<%# TO DO: %>
-  
