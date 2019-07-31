@@ -1,4 +1,5 @@
 <div class="ui items">
+
   <% @activities.each do |activity| %>
     <div class="item">
       <div class="image">
@@ -7,7 +8,10 @@
       <div class="content">
         <a class="header"><%= link_to activity.name, activity_path(activity) %></a>
         <div class="description">
-          <div class="ui blue label"><%= activity.rating %></div>
+          <p><i class="dollar sign icon"></i><%=activity.price%>/per person</p>
+          <p><i class="clock icon"></i><%=activity.length%> hour(s)</p>
+          <div <i class="ui blue label"></i> <i class= "star icon"></i>
+            <%=activity.rating %></div>
         </div>
 
       </div>  
