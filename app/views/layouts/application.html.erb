@@ -13,20 +13,20 @@
   <body>
     <div class="ui blue secondary  menu">
       <div class="ui grey container">
-        <a class="active item">
-          Resorts
-        </a>
-        <a class="active item">
-         Activities
-        </a>
-        <a class="active item">
-          Reservations
-        </a>
+        <%= link_to :Resorts, resorts_path, class: "item" %>
+        <%= link_to :Activities, activities_path, class: "item" %>
+        <%= link_to :Reservations, reservations_path, class: "item" %>
+    
         <div class="right menu">
-          
-          <a class="ui item">
-            Logout
-          </a>
+        <% if logged_in? %>
+        <div class="ui item"><%= current_user_name%></div>
+        <%= link_to :Logout, logout_path, class: "ui item" %>
+        <% else %>
+        <%= link_to :Login, login_path, class: "ui item" %>
+        <%= link_to "Sign up", register_path, class: "ui item" %>
+
+
+        <% end %>
         </div>
       </div>
     </div>

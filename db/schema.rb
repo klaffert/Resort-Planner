@@ -41,8 +41,6 @@ ActiveRecord::Schema.define(version: 2019_07_29_213751) do
     t.string "name"
     t.string "city"
     t.string "price_range"
-    t.string "images"
-    t.integer "user_id"
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,7 +48,8 @@ ActiveRecord::Schema.define(version: 2019_07_29_213751) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "budget"
+    t.string "budget"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

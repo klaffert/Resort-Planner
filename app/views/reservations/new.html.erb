@@ -1,4 +1,9 @@
 <h2><%=@reservation.resort.name%>
 <%= form_for @reservation do |f|%>
+<%= f.label :stay_length %>
+<%= f.text_field :length %><br>
+<%= f.label :party_size %>
+<%= f.number_field :party_size %><br>
+<%= f.hidden_field :resort_id, value:@reservation.resort.id %>
 <%= f.submit %>
 <% end %>

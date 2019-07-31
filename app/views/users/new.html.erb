@@ -1,7 +1,10 @@
+<%= flash[:message] %>
 <%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.number_field :budget %>
-<%= f.label :budget %>
-<%= f.submit %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br>
+  <%= f.submit %>
 <% end %>
