@@ -1,19 +1,16 @@
 <div class="item">
     <div class="content">
-        
-        <h1 class="ui header">
-          <a class="header"><%= @activity.name %></a>
-          <div class="ui green label"><i class="star icon"></i><%= @activity.rating %></div>
-        </h1>
-            <button class="ui primary basic button">
-         <%= link_to :Book, new_resort_activity_path(:activity_id => @activity.id)%>
-            </button>
-        <p></p>
-          <p><i class="clock icon"></i><%= @activity.length %> hour(s)</p>
-          <p><i class="dollar sign icon"></i><%= @activity.price%>/per person</p>
-          
-        <%= form_for @activity do |f| %>
-          <i class="building icon"></i><%= f.collection_select :resorts, Resort.all, :name, :name %>
+        <%= form_for @resort_activity do |f| %>
+          <h1 class="ui header">
+            <a class="header"><%= @resort_activity.activity.name %></a>
+            <div class="ui green label"><i class="star icon"></i><%= @resort_activity.activity.rating %></div>
+          </h1>
+          <%= f.submit "Book", class: "ui primary basic button" %>
+          <p></p>
+          <p><i class="clock icon"></i><%= @resort_activity.activity.length %> hour(s)</p>
+          <p><i class="dollar sign icon"></i><%= @resort_activity.activity.price%>/per person</p>
+          <i class="building icon"></i><%= f.collection_select :resort, Resort.all, :id, :name %>
+          <%= f.hidden_field :activity_id, value:@resort_activity.activity.id %>
         <% end %>
         
         <br>

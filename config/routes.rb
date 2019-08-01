@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get '/login', to: "auth#login", as: "login_path"
   post '/login', to: "auth#verify"
   get '/logout', to: "auth#logout", as: "logout"
+  post '/resorts/search_by_city', to: "resorts#search_by_city", as: "resorts_search_by_city"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

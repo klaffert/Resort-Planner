@@ -2,6 +2,7 @@
 <%= form_for @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
+  <%= f.select :budget, list_all_budgets %>
   <%= f.label :password %>
   <%= f.password_field :password %><br>
   <%= f.label :password_confirmation %>

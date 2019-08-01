@@ -8,12 +8,12 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(name:params[:user][:name], password: params[:user][:password])
+        @user = User.new(name:params[:user][:name], password: params[:user][:password], budget: params[:user][:budget])
         if @user.save
           session[:user_id] = @user.id
           redirect_to reservations_path
         else
-          flash[:message] = "Please enter the correct stuff"
+          flash[:message] = @user.errors.full_messages.first
           render :new
         end
     end

@@ -2,8 +2,9 @@ class ReservationsController < ApplicationController
     before_action :redirect_user
 
     def new
+
         @reservation = Reservation.new
-        
+        @reservation.resort = Resort.find(params[:resort_id])
     end
 
     def index
@@ -27,6 +28,7 @@ class ReservationsController < ApplicationController
 
     def show 
         @reservation= Reservation.find(params[:id])
+        puts @reservation
     end
 
     def destroy
