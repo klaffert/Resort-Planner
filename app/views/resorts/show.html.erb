@@ -1,4 +1,4 @@
-<div class="item">
+<div class="item" >
        
        <div class="content">
         
@@ -20,11 +20,11 @@
          <div><%= image_tag "#{@resort.id}.png" %></div>
 
       </div> 
-  
-          <a class="header">Activities</a>
-        <div class="ui bulleted list">
-        <div class="item">Spa Day</div>
-        <div class="item">Scuba Diving</div>
+
+        <a class="header">Activities</a>
+        <div class="multi-column">
+        <div class="item"><%= link_to "Spa Day", activity_path(activity_url) %></div>
+        <div class="item"><%= link_to "Scuba Diving", activity_path(activity_url) %></div>
         <div class="item">Zumba Class</div>
         <div class="item">Salsa Dancing</div>
         <div class="item">Cooking Class</div>
