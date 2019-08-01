@@ -12,12 +12,8 @@
           <i class="building icon"></i><%= f.collection_select :resort, Resort.all, :id, :name %>
           <%= f.hidden_field :activity_id, value:@resort_activity.activity.id %>
         <% end %>
-
-        </div>
+        
         <br>
-         <div><%= image_tag "#{@activity.id}.jpg" %></div>
+        <div><%= image_tag "#{@activity.id}.jpg" %></div>
     </div>  
 </div>
-
-<%# TO DO: %>
-  

@@ -64,8 +64,8 @@ Reservation.create(length: 3, party_size: 2, user_id: 1, resort_id: 2)
 
 10.times do
   ResortActivity.create(
-    activity_id: Faker::Number.between(1,9),
-    resort_id: Faker::Number.between(1,11),
+    activity_id: Faker::Number.between(1,8),
+    resort_id: Faker::Number.between(1,10),
     user_id: Faker::Number.between(1,5)
   )
 end

@@ -8,9 +8,9 @@ class ResortActivitiesController < ApplicationController
 
     def new
         @resort_activity = ResortActivity.new
-        # @resort_activity.activity = Activity.find(params["activity_id"])
-        # @resort_activity.resort = Resort.find(1)
-        # @resort_activity.user = User.find(session[:user_id])
+        @resort_activity.activity = Activity.find(params["activity_id"])
+        @resort_activity.resort = Resort.find_by(params["resort_id"])
+        @resort_activity.user = User.find_by(params["user_id"])
     end
 
     def create

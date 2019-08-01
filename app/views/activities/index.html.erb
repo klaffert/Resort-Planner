@@ -1,9 +1,10 @@
+<h1 class="ui blue header">Activities</h1>
 <div class="ui items">
 
   <% @activities.each do |activity| %>
     <div class="item">
       <div class="image">
-          <%= image_tag "#{activity.id}.jpg" %>
+          <%=image_tag "#{activity.id}.jpg" %>
       </div>
       <div class="content">
         <a class="header"><%= link_to activity.name, activity_path(activity) %></a>
@@ -18,10 +19,3 @@
     </div>
   <% end %>
 </div>
-
-<%# TO DO: %>
-
-<%# Sort Activities by Ratings or Alphabetically? %>
-<%# If we add new activities, images won't show up?%>
-<%# Add "Activities" Header in correct formatting%>
-<%# Add "Create New Activity" link somewhere for owners%>
