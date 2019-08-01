@@ -1,7 +1,24 @@
-<%= form_for :auth do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
-  <%= f.submit "Login" %>
+<div class="ui middle aligned center aligned grid">
+<div class="column" style="max-width: 450px; margin-top:20px;">
+<%= form_for(:auth, html: {class: "ui form"}) do |f|  %>
+  <div class="ui stacked segment">
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="user icon"></i>
+        <%= f.text_field :name, placeholder: "User Name" %>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="lock icon"></i>
+        <%= f.password_field :password, placeholder: "Password" %>
+      </div>
+    </div>
+    <%= f.submit "Login", class:"ui fluid large blue submit button"%>
+  </div>
 <% end %>
+<% if flash[:message] %>
+<div class="ui error message"><%= flash[:message]%> </div>
+<% end %>
+</div>
+</div>

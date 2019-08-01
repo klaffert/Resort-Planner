@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :redirect_user, :logged_in?, :current_user_name, :current_user_id
+    helper_method :redirect_user, :logged_in?, :current_user_name, :current_user_id, :list_all_budgets
 
     def redirect_user
         if !logged_in?
@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
     def current_user_id
         @user = User.find(session[:user_id])
         @user.id
+    end
+
+    def list_all_budgets
+        return ['low', 'medium', 'high']
     end
 end

@@ -1,3 +1,12 @@
+<%= form_tag(resorts_search_by_city_path, method: "post") do %>
+<div class="ui action input">
+  <%= text_field_tag(:id, nil, placeholder: "Search by city") %>
+  <button class="ui icon button">
+    <i class="search icon"></i>
+  </button>
+</div>
+<% end %>
+
 <div class="ui items">
   <% @resorts.each do |resort| %>
     <div class="item">
@@ -16,16 +25,15 @@
     </div>
   <% end %>
 </div>
-    
 
 <%= form_tag("/resorts", method: "get") do %>
-  <%= label_tag(:id, "Search by city:") %>
+  <%= label_tag(:id, "Search by budget:") %>
   <%= text_field_tag(:id) %>
   <%= submit_tag("Search") %>
 <% end %>
 
 <div class="ui items">
-  <% @resorts_by_city.each do |resort| %>
+  <% @resorts_by_budget.each do |resort| %>
     <div class="item">
       <div class="image">
           <%= image_tag "#{resort.id}.png" %>

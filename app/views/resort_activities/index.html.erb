@@ -1,0 +1,7 @@
+<%= @user.name %><br>
+<% @resort_activities.each do |activity| %>
+<%= activity.resort.name %><br>
+<%= activity.activity.name %><br>
+<%= activity.activity.length %><br>
+<%= activity.activity.price %><br>
+<% end %>

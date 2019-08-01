@@ -54,11 +54,13 @@ Activity.create(name: "Wine Tasting" , length: '3' , price: '90' , rating: '3.8'
 Activity.create(name: "Brewery Tour" , length: '2' , price: '60' , rating: '2.3')
 Activity.create(name: "Horseback Riding" , length: '3' , price: '135' , rating: '4.8')
 
-Reservation.create(length: 5, party_size: 2, user_id: 1, resort_id: 1)
-Reservation.create(length: 3, party_size: 2, user_id: 1, resort_id: 2)
 User.create(name: "Grace", budget: "low", password_digest:"123")
 User.create(name: "Eric", budget: "medium", password_digest:"123")
 User.create(name: "Tong", budget: "high", password_digest:"123")
+
+Reservation.create(length: 5, party_size: 2, user_id: 1, resort_id: 1)
+Reservation.create(length: 3, party_size: 2, user_id: 1, resort_id: 2)
+
 
 10.times do
   ResortActivity.create(

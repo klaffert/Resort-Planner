@@ -1,7 +1,10 @@
 class ResortsController < ApplicationController
     def index 
         @resorts = Resort.all
-        @resorts_by_city = Resort.where(city:params[:id])
+        if params[:city]
+            @resorts = Resort.where(city:params[:city])
+        end
+        @resorts_by_budget= Resort.where(price_range:params[:id])
     end
 
     def new
@@ -27,11 +30,15 @@ class ResortsController < ApplicationController
         redirect_to @resort
     end
 
+    def search_by_city
+        cityName = params[:id]
+        redirect_to resorts_path(city: params[:id])
+    end
+
     private
 
     def resort_params
         params.require(:resort).permit(:name, :city, :price_range, :user_id, :rating)
     end
-
 
 end

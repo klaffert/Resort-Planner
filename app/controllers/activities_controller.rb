@@ -16,6 +16,8 @@ class ActivitiesController < ApplicationController
 
     def show
         @activity = Activity.find(params[:id])
+        @resort_activity = ResortActivity.new
+        @resort_activity.activity = @activity
     end
 
     private
