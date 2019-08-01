@@ -4,7 +4,10 @@ class ResortsController < ApplicationController
         if params[:city]
             @resorts = Resort.where(city:params[:city])
         end
-        @resorts_by_budget= Resort.where(price_range:params[:id])
+        if params[:price_range]
+            @resorts = Resort.where(price_range:params[:price_range])
+        end
+        
     end
 
     def new
@@ -31,8 +34,14 @@ class ResortsController < ApplicationController
     end
 
     def search_by_city
-        cityName = params[:id]
+    
         redirect_to resorts_path(city: params[:id])
+    end
+
+    def search_by_budget
+        puts params
+        budget_range = params[:id]
+        redirect_to resorts_path(price_range: params[:id])
     end
 
     private
