@@ -2,7 +2,6 @@ class ReservationsController < ApplicationController
     before_action :redirect_user
 
     def new
-
         @reservation = Reservation.new
         @reservation.resort = Resort.find(params[:resort_id])
     end
@@ -13,11 +12,11 @@ class ReservationsController < ApplicationController
         else
             @user = User.find(session[:user_id])
             @reservations = Reservation.where(user_id: @user.id)
+            @resort_activities = ResortActivity.where(user_id: @user.id)
         end
     end
 
     def create
-        
         @reservation = Reservation.create(length: reservation_params["length"],
          party_size: reservation_params["party_size"], 
          user_id: session[:user_id], 

@@ -1,6 +1,2 @@
-<h2> Reservation Completed </h2>
-<%=@reservation.user.name%><br>
-<%=@reservation.resort.name%><br>
-<%=@reservation.length%><br>
-<%=@reservation.party_size%><br>
-<%= link_to "Cancel reservation" , @reservation, method: :delete %>
+<%=@reservation.user.name%>, you are booked for Resort <%=@reservation.resort.name%> for <%=@reservation.length%> nights!<br>
+<br><%= button_to "Cancel booking" , @resort_activity, method: :delete %>
