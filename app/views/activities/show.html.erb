@@ -7,6 +7,7 @@
           </h1>
           <%= f.submit "Book", class: "ui primary basic button" %>
           <p></p>
+          <p></p>
           <p><i class="clock icon"></i><%= @resort_activity.activity.length %> hour(s)</p>
           <p><i class="dollar sign icon"></i><%= @resort_activity.activity.price%>/per person</p>
           <i class="building icon"></i><%= f.collection_select :resort, Resort.all, :id, :name %>

@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
     end
 
     def list_all_budgets
-        return ['low', 'medium', 'high']
+        return ['high', 'medium', 'low']
     end
 end

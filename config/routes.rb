@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :reservations
   resources :resorts
   resources :users
-  get '/register', to: "users#new", as: "register_path"
+  get '/register', to: "users#new", as: "register"
   post '/register', to: "users#create"
 
   get '/login', to: "auth#login", as: "login_path"

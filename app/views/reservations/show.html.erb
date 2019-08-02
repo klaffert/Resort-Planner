@@ -1,6 +1,13 @@
 <h2> Reservation Completed </h2>
-<%=@reservation.user.name%><br>
-<%=@reservation.resort.name%><br>
-<%=@reservation.length%><br>
-<%=@reservation.party_size%><br>
+<i class="user icon"></i><%=@reservation.user.name%><br>
+<div class="item">
+<div class="header">Resort name:
+<%= @reservation.resort.name%></div>
+</div>
+<div class="item">  
+   <div class="header">Stay length: <%=@reservation.length%> days </div>
+</div>
+<div class="item">
+   <div class="header">Party size: <%=@reservation.party_size %> people </div><br>
+</div>
 <%= link_to "Cancel reservation" , @reservation, method: :delete %>

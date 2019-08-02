@@ -8,11 +8,34 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style type="text/css">
+      body {
+        background-color: #ebecf0;
+      }
+
+      .ui.items > .item {
+          position: relative;
+          background: #fff;
+          -webkit-box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+          box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+          margin: 1rem 0;
+          padding: 1em 1em;
+          border-radius: .28571429rem;
+          border: 1px solid rgba(34,36,38,.15);
+      }
+
+      .ui.menu > .ui.container > .item {
+        color: #2185D0;
+        
+      }
+
+     
+    </style>
   </head>
 
   <body>
-    <div class="ui blue secondary  menu">
-      <div class="ui grey container">
+    <div class="ui borderless main menu">
+      <div class="ui container">
         <%= link_to :Resorts, resorts_path, class: "item" %>
         <%= link_to :Activities, activities_path, class: "item" %>
         <%= link_to :Reservations, reservations_path, class: "item" %>

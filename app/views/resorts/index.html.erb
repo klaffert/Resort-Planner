@@ -1,3 +1,6 @@
+<div class="ui grid">
+  <div class="six wide column">
+
 <%= form_tag(resorts_search_by_city_path, method: "post") do %>
 <div class="ui action input">
   <%= text_field_tag(:id, nil, placeholder: "Search by city") %>
@@ -7,6 +10,8 @@
 </div>
 <% end %>
 <br>
+  </div>
+  <div class="six wide column">
 
 <%= form_tag(resorts_search_by_budget_path, method: "post") do %>
   <div class="ui action input">
@@ -16,6 +21,8 @@
     </button>
   </div>
   <% end %>
+</div>
+</div>
 
 
 <div class="ui items">
@@ -24,14 +31,13 @@
       <div class="image">
           <%= image_tag "#{resort.id}.png" %>
       </div>
-      <div class="content">
+      <div class="content white">
         <a class="header"><%= link_to resort.name, resort_path(resort) %></a>
         <div class="description">
           <p><i class="map marker icon"></i><%= resort.city %></p>
           <p><i class="dollar sign icon"></i><%= resort.price_range%></p>
           <div class="ui blue label"><i class="star icon"></i><%= resort.rating %></div>
         </div>
-
       </div>  
     </div>
   <% end %>

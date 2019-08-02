@@ -14,7 +14,7 @@ class UsersController < ApplicationController
           redirect_to reservations_path
         else
           flash[:message] = @user.errors.full_messages.first
-          render :new
+          redirect_to register_path
         end
     end
 

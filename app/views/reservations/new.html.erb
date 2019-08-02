@@ -1,9 +1,24 @@
-<h2><%=@reservation.resort.name%>
-<%= form_for @reservation do |f|%>
-<%= f.label :stay_length %>
-<%= f.text_field :length %><br>
-<%= f.label :party_size %>
-<%= f.number_field :party_size %><br>
+<div class="ui middle aligned center aligned grid">
+<div class="column" style="max-width: 450px; margin-top:20px;">
+<h2><%=@reservation.resort.name%></h2>
+<%= form_for(@reservation, html: {class: "ui form"}) do |f|%>
+  <div class="ui stacked segment">
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="user icon"></i>
+        <%= f.text_field :length, placeholder: "Stay length" %><br>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui left icon input">
+        <i class="user icon"></i>
+        <%= f.number_field :party_size, placeholder: "Party size" %><br>
+      </div>
+    </div>
 <%= f.hidden_field :resort_id, value:@reservation.resort.id %>
-<%= f.submit %>
+<%= f.submit "Create reservation", class:"ui fluid large blue submit button"%>
 <% end %>
+  </div>
+
+</div>
+</div>

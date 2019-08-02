@@ -1,6 +1,16 @@
-<h2> Book Completed </h2>
-<%=@resort_activity.user.name%><br>
-<%=@resort_activity.resort.name%><br>
-<%=@resort_activity.activity.name%><br>
-<%=@resort_activity.activity.length%><br>
-<%=@resort_activity.activity.price%><br>
+<div class="ui blue secondary  menu">
+  <h2> Book Completed <i class="bell icon"></i></h2>
+</div>
+User: <%=@resort_activity.user.name%><br>
+Resort: <%=@resort_activity.resort.name%><br>
+Activity: <%=@resort_activity.activity.name%><br>
+Length: <%=@resort_activity.activity.length%><br>
+Price: <%=@resort_activity.activity.price%><br>
+<p></p>
+
+<div class="ui vertical animated button" tabindex="0">
+  <%= link_to "Activities", resort_activities_path,class:"hidden content" %>
+  <div class="visible content">
+    <i class="calendar alternate icon"></i>
+</div>
+
