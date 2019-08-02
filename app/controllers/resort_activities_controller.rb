@@ -26,7 +26,12 @@ class ResortActivitiesController < ApplicationController
         if session[:user_id] != @user.id
             redirect_to resort_activities_path
         end
+    end
 
+    def destroy
+        @resort_activity = ResortActivity.find(params[:id])
+        @resort_activity.delete
+        redirect_to activities_path
     end
 
     private

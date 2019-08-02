@@ -1,4 +1,4 @@
-<h1 class="ui blue header">Reservations</h1>
+<h1 class="ui blue header">Resorts</h1>
 <div class="ui items">
 
  <div class="ui list">
@@ -18,5 +18,33 @@
     </div>
    <% end %>
 </div>
+
+
+
+<h1 class="ui blue header">Activities</h1>
+<div class="ui items">
+
+<ul>
+<div class="ui list">
+ <% @resort_activities.each do |activity| %>
+    <div class="item">
+      <div class="header">Resort: </div><br>
+      <%= activity.resort.name %><br>
+    </div>
+    <div class="item"><br>
+      <div class="header">Activity: </div><br>
+      <%= activity.activity.name %><br>
+    </div>
+    <div class="item">
+      <br><p><i class="clock icon"></i><%=activity.activity.length%> hour(s)</p>
+    <div class="item">
+      <p><i class="dollar sign icon"></i><%= activity.activity.price%>/per person</p>
+    <br></div>
+   <% end %>
+   </div>
+</ul>
+
+
+
 
 

@@ -10,4 +10,5 @@
 <div class="item">
    <div class="header">Party size: <%=@reservation.party_size %> people </div><br>
 </div>
+<%=@reservation.user.name%>, you are booked for Resort <%=@reservation.resort.name%> for <%=@reservation.length%> nights!<br>
 <%= link_to "Cancel reservation" , @reservation, method: :delete %>
